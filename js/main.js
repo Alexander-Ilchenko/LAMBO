@@ -1,3 +1,9 @@
+const menuBtn = document.querySelector(".menu-btn");
+const menuMobile = document.querySelector(".menu-mobile");
+menuBtn.addEventListener("click", (e) => {
+  menuMobile.classList.toggle("menu--open");
+});
+
 const swiper = new Swiper(".swiper", {
   // Optional parameters
 
@@ -5,9 +11,15 @@ const swiper = new Swiper(".swiper", {
   slidesPerView: 2,
   spaceBetween: 20,
 
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-right",
     prevEl: ".swiper-button-left",
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    770: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
   },
 });
